@@ -6,8 +6,8 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
-var app = express().listen(3000);;
-var server = require('http').Server(app);
+var app = express();
+var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 
 var kafka = require('kafka-node');
