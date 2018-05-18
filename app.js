@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
-var app = express();
+var app = express().listen(3000);;
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
