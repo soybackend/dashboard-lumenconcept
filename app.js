@@ -62,4 +62,21 @@ consumer.on('message', function (message) {
     callSockets(io, message);
 });
 
+const alarm_client = new kafka.KafkaClient({kafkaHost: 'ec2-18-204-96-185.compute-1.amazonaws.com:8089'});
+var AlarmConsumer = kafka.Consumer;
+var alarm_consumer = new AlarmConsumer(
+    alarm_client,
+    [
+        { topic: 'lumenconcept.alarm' }
+    ]
+);
+
+function callAlarmSockets(io, message){
+    io.sockets.emit('alarm', message);
+}
+
+alarm_consumer.on('message', function (message) {
+    callAlarmSockets(io, message);
+});
+
 module.exports = {app: app, server: server};

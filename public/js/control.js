@@ -22,7 +22,9 @@ $("#modo").click(function() {
     $("#onoff").attr("disabled", true);
     $("#onoff").prop("checked", true);
     slider.setAttribute('disabled', true);
+    $.get("http://34.202.239.178:8080/lights/mode/A/")
   }else{
+    $.get("http://34.202.239.178:8080/lights/mode/M/")
     slider.removeAttribute('disabled');
     $("#onoff").removeAttr("disabled");
   }
