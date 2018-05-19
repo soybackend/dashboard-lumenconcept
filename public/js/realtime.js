@@ -306,6 +306,13 @@ socket.on('iot', function(data) {
     x: moment(),
     y: measurements[5].value
   });
+
+  $("#tempValue").html(measurements[0].value);
+  $("#humValue").html(measurements[1].value);
+  $("#soundValue").html(measurements[2].value);
+  $("#monValue").html(measurements[3].value);
+  $("#ligiValue").html(measurements[4].value);
+  $("#ligeValue").html(measurements[5].value);
 });
 
 window.onload = function() {
