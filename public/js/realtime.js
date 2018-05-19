@@ -274,7 +274,7 @@ var ligeConfig = {
   }
 };
 
-var socket = io.connect('http://localhost:3000', { 'forceNew': true });
+var socket = io.connect('http://34.202.239.178:3000', { 'forceNew': true });
 socket.on('iot', function(data) {
   var measurements = JSON.parse(data.value).measurements;
   tempChart.chart.data.datasets[0].data.push({
